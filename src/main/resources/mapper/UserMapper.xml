@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserMapper">
+    <select id="userList" resultType="Student">
+        select * from student
+    </select>
+    <select id="selectTwo" resultType="Student" parameterType="string">
+        select * from student where name=#{name } and course=#{course}
+    </select>
+    <select id="selectOne" resultType="Student" parameterType="string">
+        select * from student where name =#{name }
+    </select>
+    <insert id="insertStu">
+        insert into student (name ,course,score) values (#{name },#{course},#{score})
+    </insert>
+</mapper>
